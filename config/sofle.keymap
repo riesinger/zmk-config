@@ -94,14 +94,14 @@
                 // |            |            |            |            |            |            |                             |            |            |            |            |            |            |
                        &none        &none        &none        &none        &none        &none                                      &none        &none        &none        &none        &none        &none
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |    BT0     |     F1     |    F2      |    F3      |    F4      |    BT3     |                             | PREV SONG  |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    | PLAY/PAUSE |
-                    &bt BT_SEL 0   &kp F1      &kp F2        &kp F3      &kp F4      &bt BT_SEL 3                                &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE     &kp C_PP
+                // |  BT CLEAR  |     F1     |    F2      |    F3      |    F4      |    BT0     |                             | PREV SONG  |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    | PLAY/PAUSE |
+                     &bt BT_CLR    &kp F1      &kp F2        &kp F3      &kp F4      &bt BT_SEL 0                                &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE     &kp C_PP
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |    BT1     |     F5     |    F6      |    F7      |    F8      |    BT4     |                             |     ←      |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
-                    &bt BT_SEL 1  &kp F5       &kp F6       &kp F7       &kp F8      &bt BT_SEL 3                                 &kp LEFT     &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
+                // |            |     F5     |    F6      |    F7      |    F8      |    BT1     |                             |     ←      |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
+                       &trans     &kp F5       &kp F6       &kp F7       &kp F8      &bt BT_SEL 1                                 &kp LEFT     &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────╮   ╭────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |    BT2     |     F9     |    F10     |    F11     |    F12     |  BT CLEAR  |            |   |            |    HOME    |   PGDOWN   |    PGUP    |    END     |            |            |
-                    &bt BT_SEL 2   &kp F9       &kp F10    &kp F11        &kp F12    &bt BT_CLR    &trans           &trans       &kp HOME     &kp PG_DN    &kp PG_UP     &kp END      &trans       &trans
+                // |            |     F9     |    F10     |    F11     |    F12     |    BT2     |            |   |            |    HOME    |   PGDOWN   |    PGUP    |    END     |            |            |
+                       &trans       &kp F9       &kp F10    &kp F11        &kp F12   &bt BT_SEL 2    &trans           &trans       &kp HOME     &kp PG_DN    &kp PG_UP     &kp END      &trans       &trans
                 // ╰────────────┴────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┴────────────╯
                 //                           |            |            |            |            |            |   |            |            |            |            |            |
                                                  &none        &trans     &trans       &trans       &trans           &trans       &trans       &trans       &trans         &none
