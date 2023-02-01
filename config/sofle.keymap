@@ -13,6 +13,8 @@
 #define HRML(k2,k3,k4) &hrm LCTRL k2 &hrm LALT k3  &hrm LGUI k4
 #define HRMR(k1,k2,k3) &hrm RGUI k1  &hrm RALT k2  &hrm RCTRL k3
 
+#define HYPER(k) &kp LS(LC(LA(LG(k))))
+
 // NOTE: I'm slowly removing keys from the Sofle PCB since I want to try to find an optimal layout (for me) before designing/buying new hardware.
 //       If you see empty keys, that's the reason.
 //
@@ -118,14 +120,14 @@
                 // |            |            |            |            |            |            |                             |            |            |            |            |            |            |
                        &none        &none        &none        &none        &none        &none                                      &none        &none        &none        &none        &none        &none
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |    BT0     |     F1     |    F2      |    F3      |    F4      |    BT3     |                             | PREV SONG  |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    | PLAY/PAUSE |
-                    &bt BT_SEL 0   &kp F1      &kp F2        &kp F3      &kp F4      &bt BT_SEL 3                                &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE     &kp C_PP
+                // |            |  HYPER Q   |  HYPER Q   |  HYPER E   |  HYPER R   |  HYPER T   |                             | PREV SONG  |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    | PLAY/PAUSE |
+                        &trans     HYPER(Q)     HYPER(W)     HYPER(E)     HYPER(R)     HYPER(T)                                  &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE     &kp C_PP
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |    BT1     |     F5     |    F6      |    F7      |    F8      |    BT4     |                             |     ←      |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
-                    &bt BT_SEL 1  &kp F5       &kp F6       &kp F7       &kp F8      &bt BT_SEL 3                                 &kp LEFT     &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
+                // |            |  HYPER A   |  HYPER S   |  HYPER D   |  HYPER F   |  HYPER G   |                             |     ←      |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
+                        &trans     HYPER(A)     HYPER(S)     HYPER(D)     HYPER(F)     HYPER(G)                                  &kp LEFT     &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────╮   ╭────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |    BT2     |     F9     |    F10     |    F11     |    F12     |  BT CLEAR  |            |   |            |    HOME    |   PGDOWN   |    PGUP    |    END     |            |            |
-                    &bt BT_SEL 2   &kp F9       &kp F10    &kp F11        &kp F12    &bt BT_CLR    &trans           &trans       &kp HOME     &kp PG_DN    &kp PG_UP     &kp END      &trans       &trans
+                // |            |  HYPER Z   |  HYPER X   |  HYPER C   |  HYPER V   |  HYPER B   |            |   |            |    HOME    |   PGDOWN   |    PGUP    |    END     |            |            |
+                        &trans     HYPER(Z)     HYPER(X)     HYPER(C)     HYPER(V)     HYPER(B)     &trans           &trans       &kp HOME     &kp PG_DN    &kp PG_UP     &kp END      &trans       &trans
                 // ╰────────────┴────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┴────────────╯
                 //                           |            |            |            |            |            |   |            |            |            |            |            |
                                                  &none        &trans     &trans       &trans       &trans           &trans       &trans       &trans       &trans         &none
