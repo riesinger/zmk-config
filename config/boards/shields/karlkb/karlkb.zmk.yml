@@ -1,0 +1,11 @@
+file_format: "1"
+id: karlkb
+name: KarlKB
+type: shield
+url: https://github.com/riesinger/karlkb
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - karlkb_left
+  - karlkb_right
