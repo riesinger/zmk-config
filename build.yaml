@@ -21,3 +21,5 @@ include:
     shield: karlkb_left
   - board: nice_nano_v2
     shield: karlkb_right
+  - board: nice_nano_v2
+    shield: settings_reset
