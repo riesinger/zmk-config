@@ -3,6 +3,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // Layer aliases
 #define LEF 1
@@ -82,14 +83,14 @@
         right_layer {
             bindings = <
                 // ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                             ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
-                // |  BT CLEAR  |     F1     |    F2      |    F3      |    F4      |    BT0     |                             | PREV SONG  |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    | PLAY/PAUSE |
-                     &bt BT_CLR    &kp F1      &kp F2        &kp F3      &kp F4      &bt BT_SEL 0                                &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE     &kp C_PP
+                // |            |     F1     |    F2      |    F3      |    F4      |            |                             | PREV SONG  |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    | PLAY/PAUSE |
+                       &trans      &kp F1      &kp F2        &kp F3      &kp F4         &trans                                   &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE     &kp C_PP
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |            |     F5     |    F6      |    F7      |    F8      |    BT1     |                             |     ←      |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
-                       &trans     &kp F5       &kp F6       &kp F7       &kp F8      &bt BT_SEL 1                                 &kp LEFT     &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
+                // |            |     F5     |    F6      |    F7      |    F8      |            |                             |     ←      |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
+                       &trans     &kp F5       &kp F6       &kp F7       &kp F8         &trans                                     &kp LEFT     &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |            |     F9     |    F10     |    F11     |    F12     |    BT2     |                             |    HOME    |   PGDOWN   |    PGUP    |    END     |            |            |
-                       &trans       &kp F9       &kp F10    &kp F11        &kp F12   &bt BT_SEL 2                                  &kp HOME     &kp PG_DN    &kp PG_UP     &kp END      &trans       &trans
+                // |            |     F9     |    F10     |    F11     |    F12     |            |                             |    HOME    |   PGDOWN   |    PGUP    |    END     |            |            |
+                       &trans       &kp F9       &kp F10    &kp F11        &kp F12      &trans                                     &kp HOME     &kp PG_DN    &kp PG_UP     &kp END      &trans       &trans
                 // ╰────────────┴────────────┼────────────┼────────────┼────────────┼────────────┼────────────╮   ╭────────────┼────────────┼────────────┼────────────┼────────────┼────────────┴────────────╯
                 //                                                                  |            |            |   |            |            |
                                                                                       &trans       &trans           &trans       &trans
@@ -101,14 +102,14 @@
         tri_layer {
             bindings = <
                 // ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                             ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
-                // |            |  HYPER Q   |  HYPER Q   |  HYPER E   |  HYPER R   |  HYPER T   |                             | PREV SONG  |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    | PLAY/PAUSE |
-                        &trans     HYPER(Q)     HYPER(W)     HYPER(E)     HYPER(R)     HYPER(T)                                  &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE     &kp C_PP
+                // |            |  HYPER Q   |  HYPER Q   |  HYPER E   |  HYPER R   |  HYPER T   |                             |    BT0     |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    |  BT CLEAR  |
+                        &trans     HYPER(Q)     HYPER(W)     HYPER(E)     HYPER(R)     HYPER(T)                                 &bt BT_SEL 0 &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE   &bt BT_CLEAR
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |            |  HYPER A   |  HYPER S   |  HYPER D   |  HYPER F   |  HYPER G   |                             |     ←      |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
-                        &trans     HYPER(A)     HYPER(S)     HYPER(D)     HYPER(F)     HYPER(G)                                  &kp LEFT     &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
+                // |            |  HYPER A   |  HYPER S   |  HYPER D   |  HYPER F   |  HYPER G   |                             |    BT1     |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
+                        &trans     HYPER(A)     HYPER(S)     HYPER(D)     HYPER(F)     HYPER(G)                                 &bt BT_SEL 1  &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |            |  HYPER Z   |  HYPER X   |  HYPER C   |  HYPER V   |  HYPER B   |                             |    HOME    |   PGDOWN   |    PGUP    |    END     |            |            |
-                        &trans     HYPER(Z)     HYPER(X)     HYPER(C)     HYPER(V)     HYPER(B)                                   &kp HOME     &kp PG_DN    &kp PG_UP     &kp END      &trans       &trans
+                // |            |  HYPER Z   |  HYPER X   |  HYPER C   |  HYPER V   |  HYPER B   |                             |    BT2     |   PGDOWN   |    PGUP    |    END     |            |TOGGLE CONN |
+                        &trans     HYPER(Z)     HYPER(X)     HYPER(C)     HYPER(V)     HYPER(B)                                 &bt BT_SEL 2   &kp PG_DN    &kp PG_UP     &kp END      &trans    &out OUT_TOG
                 // ╰────────────┴────────────┼────────────┼────────────┼────────────┼────────────┼────────────╮   ╭────────────┼────────────┼────────────┼────────────┼────────────┼────────────┴────────────╯
                 //                                                                  |            |            |   |            |            |
                                                                                       &trans       &trans           &trans       &trans
