@@ -16,6 +16,14 @@
 
 #define HYPER(k) &kp LS(LC(LA(LG(k))))
 
+// Shorter names for some keys
+#define KEY_BACK C_AC_BACK
+#define KEY_FWD C_AC_FORWARD
+
+// Screen grabs
+#define KEY_SG_CLIP LS(LC(LG(N4)))
+#define KEY_SG_TOOL LS(LG(N3))
+
 // Legend: Mod-Tap: <Hold>@<Tap>
 / {
     behaviors {
@@ -102,14 +110,14 @@
         tri_layer {
             bindings = <
                 // ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                             ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
-                // |            |  HYPER Q   |  HYPER Q   |  HYPER E   |  HYPER R   |  HYPER T   |                             |    BT0     |  VOL DOWN  |   VOL UP   | NEXT SONG  |    MUTE    |  BT CLEAR  |
-                        &trans     HYPER(Q)     HYPER(W)     HYPER(E)     HYPER(R)     HYPER(T)                                 &bt BT_SEL 0 &kp C_VOL_DN &kp C_VOL_UP  &kp C_NEXT  &kp C_MUTE   &bt BT_CLEAR
+                // |            |  HYPER Q   |  HYPER Q   |  HYPER E   |  HYPER R   |  HYPER T   |                             |    BT0     |     BT1    |    BT2     |     BT3    |            |  BT CLEAR  |
+                        &trans     HYPER(Q)     HYPER(W)     HYPER(E)     HYPER(R)     HYPER(T)                                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3     &trans    &bt BT_CLR
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |            |  HYPER A   |  HYPER S   |  HYPER D   |  HYPER F   |  HYPER G   |                             |    BT1     |      ↓     |      ↑     |      →     |      ⌦     |      ⌫     |
-                        &trans     HYPER(A)     HYPER(S)     HYPER(D)     HYPER(F)     HYPER(G)                                 &bt BT_SEL 1  &kp DOWN      &kp UP      &kp RIGHT     &kp DEL    &kp BSPC
+                // |            |  HYPER A   |  HYPER S   |  HYPER D   |  HYPER F   |  HYPER G   |                             |    BACK    |      ↓     |      ↑     |  FORWARD   |      ⌦     |      ⌫     |
+                        &trans     HYPER(A)     HYPER(S)     HYPER(D)     HYPER(F)     HYPER(G)                                 &kp KEY_BACK  &kp DOWN      &kp UP     &kp KEY_FWD     &kp DEL     &kp BSPC
                 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                             ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-                // |            |  HYPER Z   |  HYPER X   |  HYPER C   |  HYPER V   |  HYPER B   |                             |    BT2     |   PGDOWN   |    PGUP    |    END     |            |TOGGLE CONN |
-                        &trans     HYPER(Z)     HYPER(X)     HYPER(C)     HYPER(V)     HYPER(B)                                 &bt BT_SEL 2   &kp PG_DN    &kp PG_UP     &kp END      &trans    &out OUT_TOG
+                // |            |  HYPER Z   |  HYPER X   |  HYPER C   |  HYPER V   |  HYPER B   |                             |   SG Menu  |   SG Clip  |    PGUP    |    END     |            |TOGGLE CONN |
+                        &trans     HYPER(Z)     HYPER(X)     HYPER(C)     HYPER(V)     HYPER(B)                               &kp KEY_SG_TOOL &kp KEY_SG_CLIP &kp PG_UP   &kp END      &trans    &out OUT_TOG
                 // ╰────────────┴────────────┼────────────┼────────────┼────────────┼────────────┼────────────╮   ╭────────────┼────────────┼────────────┼────────────┼────────────┼────────────┴────────────╯
                 //                                                                  |            |            |   |            |            |
                                                                                       &trans       &trans           &trans       &trans
