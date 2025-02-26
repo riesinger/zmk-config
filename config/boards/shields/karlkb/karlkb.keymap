@@ -38,10 +38,10 @@ ZMK_HOLD_TAP(rig_tap, bindings = <&mo>, <&kp>; flavor = "balanced";
         hrm: hold_tap {
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <175>;
-            quick-tap-ms = <100>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            require-prior-idle = <140>;
+            quick-tap-ms = <160>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
