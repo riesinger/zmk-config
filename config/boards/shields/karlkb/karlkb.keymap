@@ -37,6 +37,16 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        ht: hold_tap {
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <175>;
+            quick-tap-ms = <100>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     conditional_layers {
@@ -62,8 +72,8 @@
                 // |  SHIFT      |  Z          |  X          |  C          |  V          |  B          |                               |  N          |  M          |  ,          |  .          |  /          |  SHIFT      |
                       &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B                                         &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
                 // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
-                //                                                                       |  LEF        |  ENTER      |   |  SPACE      |  RIG        |
-                                                                                            &mo LEF       &kp RET           &kp SPACE     &mo RIG
+                //                                                                       |  ⌫ / LEF    |  ENTER      |   |  SPACE      | TAB / RIG   |
+                                                                                       &ht &mo LEF &kb BSPC &kp RET        &kp SPACE &ht &mo RIG &kp TAB
                 //                                                                       ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
             >;
 
