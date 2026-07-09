@@ -1,0 +1,119 @@
+# keymap-drawer configuration for the KarlKB.
+#
+# See https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md
+# for all available options.
+
+parse_config:
+  # zmk-helpers is installed as a west/Zephyr module (see config/west.yml).
+  # keymap-drawer needs its headers on the include path to preprocess the keymap.
+  zmk_additional_includes:
+    - zmk-helpers/include
+
+  # Strip common ZMK prefixes so the map below can use short names.
+  zmk_remove_keycode_prefix: ["C_", "KP_"]
+
+  # Render modifier functions like LG(N4) as ⌘4 instead of Gui+4.
+  # These are macOS glyphs; keeps them consistent across the keymap.
+  modifier_fn_map:
+    left_ctrl: "⌃"
+    right_ctrl: "⌃"
+    left_shift: "⇧"
+    right_shift: "⇧"
+    left_alt: "⌥"
+    right_alt: "⌥"
+    left_gui: "⌘"
+    right_gui: "⌘"
+    keycode_combiner: "{mods}{key}"
+    mod_combiner: "{mod_1}{mod_2}"
+    special_combinations:
+      left_ctrl+left_alt+left_gui+left_shift: "Hyper"
+      left_ctrl+left_alt+left_shift: "Meh"
+
+  # Substitutions applied to parsed ZMK keycodes (after prefix stripping).
+  # Emphasises macOS-native glyphs and clean symbols for common keys.
+  zmk_keycode_map:
+    # Modifiers on their own
+    LSHFT: "⇧"
+    RSHFT: "⇧"
+    LCTRL: "⌃"
+    RCTRL: "⌃"
+    LALT: "⌥"
+    RALT: "⌥"
+    LGUI: "⌘"
+    RGUI: "⌘"
+    CAPS: "⇪"
+
+    # Editing / whitespace
+    ESC: "⎋"
+    TAB: "⇥"
+    RET: "⏎"
+    ENTER: "⏎"
+    SPACE: "␣"
+    BSPC: "⌫"
+    DEL: "⌦"
+
+    # Navigation
+    LEFT: "←"
+    DOWN: "↓"
+    UP: "↑"
+    RIGHT: "→"
+    HOME: "⇱"
+    END: "⇲"
+    PG_UP: "⇞"
+    PG_DN: "⇟"
+
+    # Media / consumer keys (C_ prefix stripped)
+    PREV: "⏮"
+    NEXT: "⏭"
+    PP: "⏯"
+    MUTE: "🔇"
+    VOL_UP: "🔊"
+    VOL_DN: "🔉"
+    AC_BACK: "◀ Back"
+    AC_FORWARD: "Fwd ▶"
+
+    # Numpad-ish (KP_ prefix stripped)
+    MULTIPLY: "×"
+    PLUS: "+"
+
+    # Common symbols — make them stand out
+    GRAVE: "`"
+    SQT: "'"
+    SEMI: ";"
+    COLON: ":"
+    COMMA: ","
+    DOT: "."
+    FSLH: "/"
+    BSLH: "\\"
+    PIPE: "|"
+    EQUAL: "="
+    MINUS: "-"
+    EXCL: "!"
+    AT: "@"
+    HASH: "#"
+    DLLR: "$"
+    PRCNT: "%"
+    CARET: "^"
+    AMPS: "&"
+    LPAR: "("
+    RPAR: ")"
+    LBRC: "{"
+    RBRC: "}"
+    LBKT: "["
+    RBKT: "]"
+
+  # Map opaque behaviors to short, drawable labels.
+  raw_binding_map:
+    "&bt BT_CLR": "BT CLR"
+    "&bt BT_SEL 0": "BT 1"
+    "&bt BT_SEL 1": "BT 2"
+    "&bt BT_SEL 2": "BT 3"
+    "&bt BT_SEL 3": "BT 4"
+    "&out OUT_TOG": "OUT ⇄"
+
+draw_config:
+  # Slightly larger key size for readability.
+  key_h: 56
+  key_w: 60
+  # Show combos etc. on the same page.
+  separate_combo_diagrams: false

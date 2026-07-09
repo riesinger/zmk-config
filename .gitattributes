@@ -1,0 +1,15 @@
+# Force LF line endings for all text files so keymap diffs stay clean.
+* text=auto eol=lf
+
+# ZMK / Zephyr sources are always LF.
+*.keymap  text eol=lf
+*.dtsi    text eol=lf
+*.dts     text eol=lf
+*.overlay text eol=lf
+*.conf    text eol=lf
+*.yaml    text eol=lf
+*.yml     text eol=lf
+*.h       text eol=lf
+
+# Rendered SVGs are text but shouldn't count for language stats.
+draw/*.svg linguist-generated=true
